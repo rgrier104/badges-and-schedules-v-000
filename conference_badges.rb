@@ -20,10 +20,12 @@ def assign_rooms(name_array)
 end
 
 def printer(name_array)
-  batch_badge_creator(name_array) do |name|
+  badge_array = batch_badge_creator(name_array)
+  room_array = assign_rooms(name_array)
+  badge_array.each do |name|
     puts name
   end
-  assign_rooms(name_array) do |name|
+  room_array.each do |name|
     puts name
   end
 end
